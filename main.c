@@ -26,24 +26,25 @@
 #include <thread>
 #include <stdio.h>
 #include <wiringPi.h>
+#include "drivers.c"
 
-#define Output 17
+
+#define SERVER 27 //BCM pin 27, not the same pin as wiring pi, pin 13 on the board
 
 int main(int argc, char **argv)
 {
-	wiringPiSetupGpio();
-	
-	pinMode(Output, OUTPUT);
+	wiringPiSetupGpio();//intializing gpio pins
+	pinMode(RELAY, INPUT); //setting to input for protection
 	printf("Setup\n");
+	pinMode(SERVER, INPUT);
+	
 	while(1){
-		digitalWrite(Output, HIGH);
-		printf("HIGH/n");
-		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-		printf("Low/n");
-		digitalWrite(Output, LOW);
-		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-		
+		if(pulse_relay(digitalRead(SERVER))){ //will pluse RELAY for 1 sec if server is activated
+			std::this_thread::sleep_for(std::chrono::milliseconds(10000)); //wait 10 seconds for door to fully open/close
+		}
 	}
+		
+	
 	
 	return 0;
 }
