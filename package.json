@@ -1,5 +1,5 @@
 {
-  "name": "ScottsGarageGym",
+  "name": "scotts-garage-gym",
   "version": "1.0.0",
   "description": "Have you ever wanted to connect your garage door openner to wide expansive wild west that is the internet. Well look no further ...",
   "main": "server.js",
