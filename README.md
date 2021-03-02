@@ -26,4 +26,8 @@ Depending on that memory constraints of the PI, there are two option as of rn
 
 Nginx is the go to option because of how light it is and general purpose
 
-###
+### Authors
+
+> Scott Tornquist
+> Benjamin Reilly
+> Nick Smith
