@@ -1,9 +1,9 @@
 
-//const path = require("path");
-//const express = require("express");
-//const bodyParser = require("body-parser");
-//const server= express();
-//server.use(bodyParser.json());
+const path = require("path");
+const express = require("express");
+const bodyParser = require("body-parser");
+const server= express();
+server.use(bodyParser.json());
 
 const auth = require("./auth.js"); //include authenitcation protocal
 const drive = require("./drive.js"); //including driver functions
