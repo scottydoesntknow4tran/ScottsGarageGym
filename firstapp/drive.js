@@ -3,9 +3,9 @@
 
 // GPIO pin of the button, //BCM pin 27, not the same pin as wiring pi, pin 13 on the board
 
-var Gpio = require('onoff').Gpio;
-var RELAY = 17;
-const led = new Gpio(RELAY, 'out');
+const Gpio = require('onoff').Gpio;
+//var RELAY = 17;
+const led = new Gpio(17, 'out');
 
 //wpi.setup('wpi');// intialization
 
