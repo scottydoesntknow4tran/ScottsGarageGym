@@ -20,7 +20,7 @@ function pulse_relay(){
  	// //std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // wait to avoid button bouncing
  	// digitalWrite(RELAY, LOW);//powering off relay
  	// pinMode(RELAY, INPUT); //set to input pin to  protect pin
-    led.writeSync(1);
+    led.write(1);
     setTimeout(() => {led.writeSync(0);}, 200);
     //const iv = setInterval(_ => led.writeSync(1);, 200);
     console.log("door toggled");
