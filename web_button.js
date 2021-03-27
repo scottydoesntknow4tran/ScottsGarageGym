@@ -1,4 +1,5 @@
-var wpi = require('wiring-pi');
+var wpi = require('onoff').Gpio;
+const led = new Gpio(17, 'out');
 
 // GPIO pin of the button, //BCM pin 27, not the same pin as wiring pi, pin 13 on the board
 var configPin = 17;
