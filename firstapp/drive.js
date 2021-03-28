@@ -5,7 +5,7 @@
 
 const Gpio = require('onoff').Gpio;
 //var RELAY = 17;
-const led = new Gpio(17, 'out');
+const led = new Gpio(4, 'out');
 
 //wpi.setup('wpi');// intialization
 
@@ -21,10 +21,10 @@ function pulse_relay(){
  	// digitalWrite(RELAY, LOW);//powering off relay
  	// pinMode(RELAY, INPUT); //set to input pin to  protect pin
     led.write(1);
-    setTimeout(() => {led.writeSync(0);}, 200);
+    setTimeout(() => {led.write(0);}, 5000);
     //const iv = setInterval(_ => led.writeSync(1);, 200);
     console.log("door toggled");
-    setTimeout(() => {led.unexport();}, 300);
+    //setTimeout(() => {led.unexport();}, 11000);
 };
 
 // process.on('SIGINT', _ => {

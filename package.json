@@ -27,7 +27,9 @@
     "config": "^3.3.4",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "uuid": "^8.3.2"
+    "onoff": "^6.0.1",
+    "uuid": "^8.3.2",
+    "wiring-pi": "^2.2.1"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",
