@@ -24,7 +24,10 @@ app.get("/boy", (req, res)=>{
 app.post("/login", (req, res) => {
   try {
     console.log(req.body);
-    auth.checkpsw(req.body.email,req.body.pw);
+    if(auth.checkpsw(req.body.email,req.body.pw)){
+      res.sendFile(path.resolve(), __dirname, "firstapp", "landing_page.html" );
+      setTimeout(() => {res.sendFile(path.resolve(), __dirname, "firstapp", "index.html" );}, 10000);
+    }
   } catch (err) {
     console.error(err);
     return res.status(500).send("Server Error!");

@@ -6,11 +6,10 @@ function checkpsw(em, pw){
     if(em == email && password == pw){
         console.log("logged in!");
         pulse_relay.pulse_relay();
-        //alert("Correct login");
+        return true;
     }
     else{
         console.log("unsuccessful");
-        //alert("incorrect login");
     }
 }
 
