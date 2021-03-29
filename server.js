@@ -24,9 +24,9 @@ app.get("/boy", (req, res)=>{
 app.post("/login", (req, res) => {
   try {
     console.log(req.body);
-    if(auth.checkpsw(req.body.email,req.body.pw)){
-      res.sendFile(path.resolve(), __dirname, "firstapp", "landing_page.html" );
-      setTimeout(() => {res.sendFile(path.resolve(), __dirname, "firstapp", "index.html" );}, 10000);
+    if(auth.checkpsw(req.body.email,req.body.pw)){ console.log("passed");
+     // res.sendFile(path.resolve(), __dirname, "firstapp", "landing_page.html" );
+      //setTimeout(() => {res.sendFile(path.resolve(), __dirname, "firstapp", "index.html" );}, 10000);
     }
   } catch (err) {
     console.error(err);

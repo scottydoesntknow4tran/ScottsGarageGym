@@ -21,11 +21,8 @@ function pulse_relay(){
  	// digitalWrite(RELAY, LOW);//powering off relay
  	// pinMode(RELAY, INPUT); //set to input pin to  protect pin
     led.write(1);
-<<<<<<< HEAD
-    setTimeout(() => {led.write(0);}, 5000);
-=======
+    //setTimeout(() => {led.write(0);}, 5000);
     setTimeout(() => {led.write(0);}, 1000);
->>>>>>> dc7c770f7ce26c6692047952a517dc44401714a6
     //const iv = setInterval(_ => led.writeSync(1);, 200);
     console.log("door toggled");
     //setTimeout(() => {led.unexport();}, 11000);
