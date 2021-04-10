@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require('fs');
-const bcrpyt = require('bcrpyt');
+const bcrpyt = require('bcrypt');
 
 const auth = require("./firstapp/auth"); //include authenitcation protocal
 const drive = require("./firstapp/drive"); //including driver functions
@@ -44,8 +44,8 @@ app.post("/login", (req, res) => {
 
 app.post("/users/register", async (req, res) => {
   try {
-    const salt = await bcrpyt.genSalt(); //generating salt
-    const hashedPassword = await bcrpyt.hash(req.body.pw, salt); //creating hashed password
+    const salt = await bcrypt.genSalt(); //generating salt
+    const hashedPassword = await bcrypt.hash(req.body.pw, salt); //creating hashed password
     const user = {email: req.body.email, password: hashedPassword };
     users.push(user);
     res.status(201).send();
@@ -62,7 +62,7 @@ app.post("/users/login", async (req, res) => {
     return res.status(400).send('User not found');
   }
   try {
-    if(await bcrpyt.compare(req.body.pw, user.password)){
+    if(await bcrypt.compare(req.body.pw, user.password)){
       res.send('Successfully logged in');
     }
     else{
